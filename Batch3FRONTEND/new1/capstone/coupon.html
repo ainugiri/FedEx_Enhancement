@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, intial-scale=1.0">
+		<title>Coupon Creation</title>
+		<link rel="stylesheet" href="coupon.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="coupon-card">
+				<img src=".\clothes.jpg" class="logo">
+				<h3>30% flat off on all Clothing Products<br> use the code</h3>
+				<div class="coupon-row">
+					<span id="cpnCode">AprilDeal30</span>
+					<span id="cpnBtn">Copy Code</span>
+				</div>
+			
+				<p>Valid Till: 30 April,2022</p>
+			
+				<div class="circle1"></div>
+				<div class="circle2"></div>
+			
+			</div>
+		</div>
+	<script>
+		var cpnBtn= document.getElementById("cpnBtn");
+		var cpnCode= document.getElementById("cpnCode");
+		
+		cpnBtn.onclick = function(){
+			navigator.clipboard.writeText(cpnCode.innerHTML);
+			cpnBtn.innerHTML="copied";
+			setTimeout(function(){
+				cpnBtn.innerHTML="COPY CODE";
+				},3000);
+		}
+	
+	</script>
+		
+	</body>
+</html>

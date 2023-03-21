@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width,intial-scale=1.0">
+	<title>Add Product</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" type="text/css" href="addcategories.css">
+	<!--link rel="stylesheet" href="homepage.css"-->
+</head>
+<body>
+	<header class="header">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-3">
+					<div class="header_logo">
+						<a href="homepage.html"><span>ATOS</span>SHOPPIE</a>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<nav class="header_menu">
+						<ul>
+							<li><a href="adminpage.html">Home</a></li>
+							<li ><a href="addcategories.html">Add Categories</a></li>
+							<li class="active"><a href="addproduct.html">Add Products</a></li>
+							<li><a href="couponcreation.html">Coupon Creation</a></li>
+							
+						</ul>
+					</nav>
+				</div>
+				<div class="col-lg-3">
+					<div class="header_right">
+						<div class="header_right_auth">
+							<p>Welcome Admin</p>
+							<a href="Login.html"><p>Logout</p></a>
+						</div>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</header>
+	<h2>Add Product</h2>
+	<section class="sample">
+        <div class="container">
+            <div class="tab tab-1">
+                <table id="table" border="1">
+                    <tr>
+                        <th>Product Image</th>
+                        <th>Category Id</th>
+						<th>Product Id</th>
+						<th>Product Name</th>
+						<th>Price</th>
+						<th>Quantity</td>
+						<th>Description</th>
+                    </tr>
+                    <tr>
+						<td>url('pics/watchs.jpg')</td>
+                        <td>1101</td>
+						<td>2000</td>
+                        <td>Realme Watch2 pro</td>
+						<td>1500</td>
+						<td>500</td>
+						<td>latest black color,36hrs battery life</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="tab tab-2">
+				Product Image:<input type="file" path="pimage" id="pimage">
+                Category Id:<input type="number" name="cid" id="cid">
+                Product Id :<input type="number" name="pid" id="pid">
+				Product Name:<input type="text" name="pname" id="pname">
+				Price:<input type="number" name="pprice" id="pprice">
+				Quantity :<input type="number" name="quantity" id="quantity">
+				Description:<input type="text" name="desc" id="desc">
+                
+                <button onclick="addHtmlTableRow();">Add</button>
+                <button onclick="editHtmlTbleSelectedRow();">Edit</button>
+                <button onclick="removeSelectedRow();">Remove</button>
+                <button onclick="createProd();">Prod</button>
+            </div>
+        </div>
+	
+        
+        <script>
+            
+            var rIndex,
+                table = document.getElementById("table");
+            
+            // check the empty input
+            function checkEmptyInput()
+            {
+                var isEmpty = false,
+					pimage=document.getElementById("pimage").value,
+                    cid = document.getElementById("cid").value,
+                    pid = document.getElementById("pid").value,
+					pname = document.getElementById("pname").value,
+					price = document.getElementById("price").value,
+					quantity = document.getElementById("quantity").value,
+					desc = document.getElementById("desc").value;
+            
+                if(pimage === ""){
+                    alert("Image Connot Be Empty");
+                    isEmpty = true;
+                }
+                else if(cid === ""){
+                    alert("Category Id Connot Be Empty");
+                    isEmpty = true;
+                }
+				else if(pid === ""){
+                    alert("Product Id Connot Be Empty");
+                    isEmpty = true;
+                }
+				else if(pname === ""){
+                    alert("Product Name Connot Be Empty");
+                    isEmpty = true;
+                }
+				else if(price === ""){
+                    alert("Price Connot Be Empty");
+                    isEmpty = true;
+                }
+				else if(quantity === ""){
+                    alert("quantity Connot Be Empty");
+                    isEmpty = true;
+                }
+				else if(desc === ""){
+                    alert("Description Connot Be Empty");
+                    isEmpty = true;
+                }
+                return isEmpty;
+            }
+            
+            // add Row
+            function addHtmlTableRow()
+            {
+				
+				console.log("In AssHTML Table ROW");
+                // get the table by id
+                // create a new row and cells
+                // get value from input text
+                // set the values into row cell's
+                if(!checkEmptyInput()){
+                var newRow = table.insertRow(table.length),
+                    cell1 = newRow.insertCell(0),
+                    cell2 = newRow.insertCell(1),
+					cell3 = newRow.insertCell(2),
+                    cell4 = newRow.insertCell(3),
+					cell5 = newRow.insertCell(4),
+					cell6 = newRow.insertCell(5),
+					cell7 = newRow.insertCell(6),
+					
+                    pimage = document.getElementById("pimage").value,
+                    cid = document.getElementById("cid").value,
+					pid = document.getElementById("pid").value,
+					pname = document.getElementById("pname").value,
+					price = document.getElementById("price").value,
+					quantity = document.getElementById("quantity").value,
+					desc = document.getElementById("desc").value;
+            
+                cell1.innerHTML = pimage;
+                cell2.innerHTML = cid;
+				cell3.innerHTML = pid;
+				cell4.innerHTML = pname;
+				cell5.innerHTML = pprice;
+				cell6.innerHTML = quantity;
+				cell7.innerHTML = desc;
+				console.log("CallingSelectedRow Input");
+                // call the function to set the event to the new row
+                selectedRowToInput();
+				console.log("Calling Create Prod");
+            }
+            }
+            
+            // display selected row data into input text
+            function selectedRowToInput()
+            {
+                
+                for(var i = 1; i < table.rows.length; i++)
+                {
+                    table.rows[i].onclick = function()
+                    {
+                      // get the seected row index
+                      rIndex = this.rowIndex;
+                      document.getElementById("pimage").value = this.cells[0].innerHTML;
+                      document.getElementById("cid").value = this.cells[1].innerHTML;
+					  document.getElementById("pid").value = this.cells[2].innerHTML;
+					  document.getElementById("pname").value = this.cells[3].innerHTML;
+					  document.getElementById("price").value = this.cells[4].innerHTML;
+					  document.getElementById("quantity").value = this.cells[5].innerHTML;
+					  document.getElementById("desc").value = this.cells[6].innerHTML;
+                      
+                    };
+                }
+            }
+            selectedRowToInput();
+            
+            function editHtmlTbleSelectedRow()
+            {
+                var pimage = document.getElementById("pimage").value,
+                    cid = document.getElementById("cid").value,
+					pid = document.getElementById("pid").value,
+					pname = document.getElementById("pname").value,
+					pprice = document.getElementById("price").value,
+					quantity = document.getElementById("quantity").value,
+					desc = document.getElementById("desc").value;
+                    
+               if(!checkEmptyInput()){
+                table.rows[rIndex].cells[0].innerHTML = pimage;
+                table.rows[rIndex].cells[1].innerHTML = cid;
+				table.rows[rIndex].cells[2].innerHTML = pid;
+				table.rows[rIndex].cells[3].innerHTML = pname;
+				table.rows[rIndex].cells[4].innerHTML = pprice;
+				table.rows[rIndex].cells[5].innerHTML = quantity;
+				table.rows[rIndex].cells[6].innerHTML = disc;
+                
+              }
+            }
+            
+            function removeSelectedRow()
+            {
+                table.deleteRow(rIndex);
+                // clear input text
+                document.getElementById("pimage").value = "";
+                document.getElementById("cid").value = "";
+                document.getElementById("pid").value = "";
+				document.getElementById("pname").value = "";
+				document.getElementById("price").value = "";
+				document.getElementById("quantity").value = "";
+				document.getElementById("desc").value = "";
+            }
+			let data = JSON.stringify({
+				category_id: document.getElementById("cid").value,
+				product_id: document.getElementById("pid").value,
+				product_name: document.getElementById("pname").value,
+				price: document.getElementById("price").value,
+				quantity: document.getElementById("quantity").value,
+				description: document.getElementById("desc").value,
+			});
+
+			const createProd = async () => {
+			console.log("Inside the method")
+			let xhr = new XMLHttpRequest();
+			xhr.open("POST", "http://localhost:8080/api/product");
+			xhr.setRequestHeader("Content-type", "application/json");
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState === 4) {
+					if (xhr.status == 200) {
+						window.location.href = "./addproduct.html"
+					}
+				}
+			};
+
+			console.log(data);
+			xhr.send(data);
+		};
+        </script>
+ </section>
+
+
+<section class="footer spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-md-6 col-sm-12">
+					<div class="footer_about">
+						<div class="footer_logo">
+							<a href="homepage.html">ATOS <span>shoppie.</span></a>
+						</div>
+						<p>Loren Ipsum is simply dummy text of the printing and typesetting industry.Loren Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+						<div class="footer_social">
+							<a href="#">
+								<i class="fa fa-facebook"></i>
+							</a>
+							<a href="#">
+								<i class="fa fa-twitter"></i>
+							</a>
+							<a href="#">
+								<i class="fa fa-instagram"></i>
+							</a>
+							<a href="#">
+								<i class="fa fa-whatsapp"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-3">
+					<div class="footer_widget">
+						<h6>Quick Links</h6>
+						<ul>
+							<li><a href="#">About</a></li>
+							<li><a href="#">Blogs</a></li>
+							<li><a href="#">Services</a></li>
+							<li><a href="#">FAQ</a></li>
+							<li><a href="#">Contact Us</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-3">
+					<div class="footer_widget">
+						<h6>Accounts</h6>
+						<ul>
+							<li><a href="#">My Account</a></li>
+							<li><a href="login.html">Login</a></li>
+							<li><a href="#">Wishlist</a></li>
+							<li><a href="#">Checkout</a></li>
+							<li><a href="homepage.html">Log Out</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-3">
+					<div class="footer_widget">
+						<h6>Support</h6>
+						<ul>
+							<li><a href="#">Frequently Asked Questions</a></li>
+							<li><a href="#">Terms and Conditions</a></li>
+							<li><a href="#">Privacy Policy</a></li>
+							<li><a href="#">Report a Payment Issue	</a></li>
+							<li><a href="#">24/7 Support</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="footer_bottom text-center py-4">
+		<p class="mb-0">
+			Copyright &copy; 2022 ATOS shoppie.All rights reserved.Design by
+			<a href="homepage.html">ATOS shopiee.</a>
+		</p>
+	</div>
+	
+
+					
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdjns.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script type="text/javascript" src="jquery.countdown.min.js"></script>
+<script type="text/javascript" src="Homepage.js"></script>
+<script src="addcategory.js"></script> 				
+</body>
+</html>
+

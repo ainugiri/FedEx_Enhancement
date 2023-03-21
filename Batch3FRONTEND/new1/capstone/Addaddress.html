@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width,intial-scale=1.0">
+	<title>Add Address</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" type="text/css" href="addaddress.css">
+	<!--link rel="stylesheet" href="homepage.css"-->
+</head>
+<body>
+	<header class="header">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-3">
+					<div class="header_logo">
+						<a href="homepage.html"><span>ATOS</span>SHOPPIE</a>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<nav class="header_menu">
+						<ul>
+							<li class="active"><a href="Homepage.html">Home</a></li>
+							<li ><a href="fashion.html">Fashion</a></li>
+							<li><a href="Electronics.html">Electronics</a></li>
+							<li><a href="#">Home & Kitchen</a></li>
+							<li><a href="contactus.html">Contact Us</a></li>
+							<li><a href="cartpage1.html"><i class="fa fa-shopping-cart"></i></a></li>
+						</ul>
+					</nav>
+				</div>
+				<div class="col-lg-3">
+					<div class="header_right">
+						<div class="header_right_auth">
+							<p>Welcome User</p>
+							<a href="login.html"><button onclick="login()">Logout</button></a>
+						</div>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</header>
+	
+	<section class="addaddress">
+		<div class="container1">
+			<h1> Add Address </h1>
+			<div class="country">
+				<label for ="country"><h5>Country :</h5></label>
+					<select name="country" id="country">
+						<option value="India">India</option>
+						<option value="Africa">Africa</option>
+						<option value="USA">USA</option>
+						<option value="Australia">Australia</option>
+						<option value="Canada">Canada</option>
+						<option value="Indonesia">Indonesia</option>
+						<option value="Japan">Japan</option>
+						<option value="China">China</option>
+						
+					</select><br></br>
+			</div>
+			<div class="mobile">
+				<h4>Mobile Number</h4>
+					<div class="input-field">
+						<input type="number" id="mob" maxlength="12" placeholder="Mobile Number"><br></br>
+					</div>
+			</div>
+			<div class="Address">
+					<h4>Address</h4>
+					<div class="input-field">
+						<input type="text" id="address" maxlength="none" placeholder="Address"><br></br>
+					</div>
+			</div>
+			<div class="row property-gallery">
+				<div class="zipcode">
+					<h4>Pincode</h4>
+						<div class="input-field">
+							<input type="number" id="pin" maxlength="7" placeholder="Pincode"><br></br>
+						</div>
+				</div>
+			</div>
+			<div class="row property-gallery">
+				<div class="city">
+					<h4> City</h4>
+					<div class="input-field">
+						<input type="text" id="city" maxlength="30px" placeholder="city"><br></br>
+					</div>
+				</div>
+				<div class="state">
+					<label for ="state"><h5>State :</h5></label>
+					 <!-- <select name="state" id="state">
+						<option value="AndhraPradesh">AndhraPradesh</option>
+						<option value="Karnataka">Karnataka</option>
+						<option value="TamilNadu">TamilNadu</option>
+						<option value="Goa">Goa</option>
+						<option value="Telangana">Telangana</option>
+						<option value="Kerela">Kerela</option>
+						<option value="Delhi">Delhi</option>
+						<option value="MadhyaPradesh">MadhyaPradesh</option>
+						<option value="Gujarat">Gujarat</option>
+						<option value="Himachalpradesh">Himachal Pradesh</option>
+					</select><br></br>  -->
+					<select name="state" id="state">
+						<option value="AndhraPradesh">AndhraPradesh</option>
+						<option value="Karnataka">Karnataka</option>
+						<option value="TamilNadu">TamilNadu</option>
+						<option value="Goa">goa</option>
+						<option value="Telangana">Telangana</option>
+						<option value="Kerela">Kerela</option>
+						<option value="Delhi">Delhi</option>
+						<option value="MadhyaPradesh">MadhyaPradesh</option>
+						<option value="Gujarat">Gujarat</option>
+						<option value="Himachalpradesh">Himachal Pradesh</option>
+					</select>
+				</div>
+			</div>
+				<div class="addaddress">
+					<button onclick="saveAddress()">Proceed to Payment</button><br></br>
+				</div>
+				<div class="return">
+					<a href="homepage.html">Go To Homepage</a>
+				</div>
+		</div>
+	</section>
+				
+	
+	<section class="footer spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-md-6 col-sm-12">
+					<div class="footer_about">
+						<div class="footer_logo">
+							<a href="homepage.html">ATOS <span>shoppie.</span></a>
+						</div>
+						<p>Loren Ipsum is simply dummy text of the printing and typesetting industry.Loren Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+						<div class="footer_social">
+							<a href="#">
+								<i class="fa fa-facebook"></i>
+							</a>
+							<a href="#">
+								<i class="fa fa-twitter"></i>
+							</a>
+							<a href="#">
+								<i class="fa fa-instagram"></i>
+							</a>
+							<a href="#">
+								<i class="fa fa-whatsapp"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-3">
+					<div class="footer_widget">
+						<h6>Quick Links</h6>
+						<ul>
+							<li><a href="#">About</a></li>
+							<li><a href="#">Blogs</a></li>
+							<li><a href="#">Services</a></li>
+							<li><a href="#">FAQ</a></li>
+							<li><a href="#">Contact Us</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-3">
+					<div class="footer_widget">
+						<h6>Accounts</h6>
+						<ul>
+							<li><a href="#">My Account</a></li>
+							<li><a href="login.html">Login</a></li>
+							<li><a href="cartpage.html">Wishlist</a></li>
+							<li><a href="#">Checkout</a></li>
+							<li><a href="homepage.html">Log Out</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-3">
+					<div class="footer_widget">
+						<h6>Support</h6>
+						<ul>
+							<li><a href="#">Frequently Asked Questions</a></li>
+							<li><a href="#">Terms and Conditions</a></li>
+							<li><a href="#">Privacy Policy</a></li>
+							<li><a href="#">Report a Payment Issue	</a></li>
+							<li><a href="#">24/7 Support</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="footer_bottom text-center py-4">
+		<p class="mb-0">
+			Copyright &copy; 2022 ATOS shoppie.All rights reserved.Design by
+			<a href="homepage.html">ATOS shopiee.</a>
+		</p>
+	</div>
+	<script>
+		const saveAddress = async () => {
+			let xhr = new XMLHttpRequest();
+			xhr.open("POST", "http://localhost:8080/address/user_address");
+			xhr.setRequestHeader("Content-type", "application/json");
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState === 4) {
+					if (xhr.status == 200) {
+						window.location.href = "./Paymentpage.html"
+						console.log(xhr);
+					}
+				}
+			};
+
+
+
+			let data = JSON.stringify({
+				mobileNumber: document.getElementById("mob").value,
+				address: document.getElementById("address").value,
+				pincode: document.getElementById("pin").value,
+				city: document.getElementById("city").value,
+				country: document.getElementById("country").value,
+				state: document.getElementById("state").value,
+				
+			});
+			
+
+			console.log(data);
+			xhr.send(data);
+		};
+	</script>
+					
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdjns.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script type="text/javascript" src="jquery.countdown.min.js"></script>
+<script type="text/javascript" src="Homepage.js"></script> 				
+</body>
+</html>
